@@ -1,10 +1,16 @@
 <template>
     <div class="films">
-        <h1>This is a film page</h1>
-        <ul>
-            <li v-for="film in films" :key="film.id">
-                {{film.title}}
-            </li>
+        <h1>Liste des films ghibli</h1>
+        <ul>  
+            <v-flex d-flex>
+                <v-layout wrap>
+                    <v-flex md4 v-for="film in films" :key="film.id">
+                        <v-card class="card-container">
+                                {{ film.title }}<v-btn @click="deleteItem(item.id)">Delete</v-btn>
+                        </v-card>
+                    </v-flex>
+                </v-layout>
+            </v-flex>
         </ul>
     </div>
 </template>
@@ -13,28 +19,15 @@
     import axios from "axios";
 
     export default {
-        name: "film",
+        name: "films",
         data: function () {
             return {
-                id: "",
-                title: "",
-                original_title: "",
-                original_title_romanised: "",
-                description: "",
-                director: "",
-                producer: "",
-                release_date: "",
-                running_time: "",
-                rt_score: "",
-                people: [],
-                species: [],
-                locations: [],
-                vehicles: [],
-                url: ""
+                films:[],
             };
         },
-        async created() {
-            this.getFilms();
+        async mounted() {
+            await this.getFilms();
+            console.log(this.films)
             
         },
         methods: {
