@@ -1,15 +1,15 @@
 <template>
-    <div class="films">
-        <h1>Liste des films ghibli</h1>
+    <div class="lieux">
+        <h1>Liste des lieux apparaissant dans les films ghibli</h1>
         <br />
         <br />
         <br />
-        <ul>  
+        <ul>
             <v-flex d-flex>
                 <v-layout wrap>
-                    <v-flex md6 v-for="film in films" :key="film.id">
+                    <v-flex md6 v-for="lieu in lieux" :key="lieu.id">
                         <v-card class="card-container">
-                                {{ film.title }}<v-btn @click="montrerFilm(film.id)">Voir</v-btn>
+                            {{ lieu.name }}<v-btn @click="montrerLieu(lieu.id)">Voir</v-btn>
                         </v-card>
                     </v-flex>
                 </v-layout>
@@ -22,28 +22,28 @@
     import axios from "axios";
 
     export default {
-        name: "films",
+        name: "lieux",
         data: function () {
             return {
-                films:[],
+                lieux:[],
             };
         },
         async mounted() {
-            await this.getFilms();
-            console.log(this.films)
-            
+            await this.getLieux();
+            console.log(this.lieux)
+
         },
         methods: {
-            async getFilms() {
+            async getLieux() {
                 try {
-                    let response = await axios.get("https://ghibliapi.herokuapp.com/films");
-                    this.films = response.data;
+                    let response = await axios.get(" https://ghibliapi.herokuapp.com/locations ");
+                    this.lieux = response.data;
                     console.log(response.data)
-                    console.log(this.films.length)
+                    console.log(this.lieux.length)
                 }
                 catch (err) {
                     console.log(err)
-                } 
+                }
             },
 
         }

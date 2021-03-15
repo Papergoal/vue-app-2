@@ -1,7 +1,13 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-  </div>
+    <div class="home">
+        <h1>GhibliVerse</h1>
+        <img alt="Ghibli logo" src="../assets/Ghibli-logo.png">
+        <br />
+        <br />
+        <br />
+        <h2>Tout savoir sur le studio Ghibli... (un peu)</h2>
+    </div>
+
 </template>
 
 <script>

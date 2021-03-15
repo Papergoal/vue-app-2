@@ -1,15 +1,15 @@
 <template>
-    <div class="films">
-        <h1>Liste des films ghibli</h1>
-        <br />
-        <br />
-        <br />
+    <div class="persos">
+        <h1>Liste des personnages apparaissant dans les films ghibli</h1>
+        <br>
+        <br>
+        <br>
         <ul>  
             <v-flex d-flex>
                 <v-layout wrap>
-                    <v-flex md6 v-for="film in films" :key="film.id">
+                    <v-flex md6 v-for="perso in persos" :key="perso.id">
                         <v-card class="card-container">
-                                {{ film.title }}<v-btn @click="montrerFilm(film.id)">Voir</v-btn>
+                                {{ perso.name }}<v-btn @click="montrerFilm(perso.id)">Voir</v-btn>
                         </v-card>
                     </v-flex>
                 </v-layout>
@@ -22,24 +22,24 @@
     import axios from "axios";
 
     export default {
-        name: "films",
+        name: "persos",
         data: function () {
             return {
-                films:[],
+                persos:[],
             };
         },
         async mounted() {
-            await this.getFilms();
-            console.log(this.films)
+            await this.getPersos();
+            console.log(this.persos)
             
         },
         methods: {
-            async getFilms() {
+            async getPersos() {
                 try {
-                    let response = await axios.get("https://ghibliapi.herokuapp.com/films");
-                    this.films = response.data;
+                    let response = await axios.get(" https://ghibliapi.herokuapp.com/people ");
+                    this.persos = response.data;
                     console.log(response.data)
-                    console.log(this.films.length)
+                    console.log(this.persos.length)
                 }
                 catch (err) {
                     console.log(err)

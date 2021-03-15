@@ -1,9 +1,10 @@
 <template>
     <div id="app">
         <div id="nav">
-            <router-link class="header-button" to="/">Home</router-link>
-            <router-link class="header-button" to="/about">About</router-link>
+            <router-link class="header-button" to="/">Menu</router-link>
             <router-link class="header-button" to="/films">Films</router-link>
+            <router-link class="header-button" to="/persos">Personnages</router-link>
+            <router-link class="header-button" to="/lieux">Lieux</router-link>
         </div>
         <router-view/>
     </div>
@@ -25,12 +26,12 @@
 
     #nav {
         padding: 30px;
-        background-color: grey;
+        background-color: lightgreen;
     }
 
         #nav a {
             font-weight: bold;
-            color: white;
+            color: black;
             text-decoration: none;
         }
 
@@ -39,9 +40,12 @@
             }
 
     .header-button {
-        background-color: #444;
-        padding: 12px;
+        background-color: white;
+        padding: 20px;
         border-radius: 5px;
-        margin: 20px;
+        margin: 2px;
+    }
+    .header-button:active {
+        background-color: lawngreen;
     }
 </style>
