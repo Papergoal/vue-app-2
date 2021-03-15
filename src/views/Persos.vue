@@ -8,8 +8,8 @@
             <v-flex d-flex>
                 <v-layout wrap>
                     <v-flex md6 v-for="perso in persos" :key="perso.id">
-                        <v-card class="card-container">
-                                {{ perso.name }}<v-btn @click="montrerFilm(perso.id)">Voir</v-btn>
+                        <v-card tile class="card-container">
+                                {{ perso.name }} <v-btn @click="montrerFilm(perso.id)">Voir</v-btn>
                         </v-card>
                     </v-flex>
                 </v-layout>

@@ -5,7 +5,7 @@
         <br />
         <br />
         <br />
-        <h2>Tout savoir sur le studio Ghibli... (un peu)</h2>
+        <h2>Tout savoir sur le studio Ghibli... (il faut bien comprendre l'anglais)</h2>
     </div>
 
 </template>

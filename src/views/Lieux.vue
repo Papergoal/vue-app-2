@@ -8,8 +8,8 @@
             <v-flex d-flex>
                 <v-layout wrap>
                     <v-flex md6 v-for="lieu in lieux" :key="lieu.id">
-                        <v-card class="card-container">
-                            {{ lieu.name }}<v-btn @click="montrerLieu(lieu.id)">Voir</v-btn>
+                        <v-card tile class="card-container">
+                            {{ lieu.name }} <v-btn @click="montrerLieu(lieu.id)">Voir</v-btn>
                         </v-card>
                     </v-flex>
                 </v-layout>
