@@ -9,7 +9,16 @@
                 <v-layout wrap>
                     <v-flex md6 v-for="perso in persos" :key="perso.id">
                         <v-card tile class="card-container">
-                                {{ perso.name }} <v-btn @click="montrerFilm(perso.id)">Voir</v-btn>
+                            <v-card-title>
+                                    {{ perso.name }} 
+                                <v-card-text>
+                                    <br>
+                                    Age :  {{perso.age}} <br>
+                                    Genre : {{perso.gender}} <br>
+                                    Couleur de cheveux : {{perso.hair_color}} <br>
+                                </v-card-text>
+                                <v-btn @click="montrerPerso(perso.id)">Voir</v-btn>
+                            </v-card-title>
                         </v-card>
                     </v-flex>
                 </v-layout>

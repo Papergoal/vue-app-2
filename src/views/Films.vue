@@ -18,7 +18,7 @@
                                 <br />
                                 by {{film.producer}} in {{film.release_date}}
                             </v-card-text>
-                            <v-expand-transition @click="montrerFilm(film.id)">Voir</v-expand-transition>
+                            <v-btn @click="getFilmID(film.id)">Voir</v-btn>
                         </v-card>
                     </v-flex>
                 </v-layout>
@@ -54,7 +54,15 @@
                     console.log(err)
                 } 
             },
-
+            async getFilmID() {
+                try {
+                    await axios.get("https://ghibliapi.herokuapp.com/films/" + this.film.id);
+                    console.log(this.films)
+                }
+                catch (err) {
+                    console.log(err)
+                }
+            },
         }
     }
 </script>

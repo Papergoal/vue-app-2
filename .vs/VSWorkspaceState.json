@@ -5,8 +5,9 @@
     "\\src",
     "\\src\\assets",
     "\\src\\components",
-    "\\src\\router"
+    "\\src\\router",
+    "\\src\\views"
   ],
-  "SelectedNode": "\\src\\App.vue",
+  "SelectedNode": "\\src\\components\\Tableau.vue",
   "PreviewInSolutionExplorer": false
 }

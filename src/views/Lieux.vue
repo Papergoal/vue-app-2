@@ -9,7 +9,15 @@
                 <v-layout wrap>
                     <v-flex md6 v-for="lieu in lieux" :key="lieu.id">
                         <v-card tile class="card-container">
-                            {{ lieu.name }} <v-btn @click="montrerLieu(lieu.id)">Voir</v-btn>
+                            <v-card-title>
+                                {{ lieu.name }}
+                                <v-card-text>
+                                    <br>
+                                    Climat :  {{lieu.climate}} <br>
+                                    Terrain : {{lieu.terrain}} <br>
+                                </v-card-text>
+                                <v-btn @click="montrerLieu(lieu.id)">Voir</v-btn>
+                            </v-card-title>
                         </v-card>
                     </v-flex>
                 </v-layout>
